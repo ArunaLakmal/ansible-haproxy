@@ -18,10 +18,10 @@
 #     name: haproxy
 #     state: reloaded
 
-- name: Make sure HAProxy service is running
-  ansible.builtin.systemd:
-    state: started
-    name: haproxy
+# - name: Make sure HAProxy service is running
+#   ansible.builtin.systemd:
+#     state: started
+#     name: haproxy
 
 - name: Setting up HAProxy configs
   template:
