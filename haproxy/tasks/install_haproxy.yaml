@@ -13,10 +13,10 @@
     enabled: yes
     masked: no
 
-- name: Reload service HAProxy, in all cases
-  ansible.builtin.systemd:
-    name: haproxy
-    state: reloaded
+# - name: Reload service HAProxy, in all cases
+#   ansible.builtin.systemd:
+#     name: haproxy
+#     state: reloaded
 
 - name: Make sure HAProxy service is running
   ansible.builtin.systemd:
