@@ -1,0 +1,37 @@
+- name: Add HAProxy ppa repository
+  ansible.builtin.apt_repository:
+    repo: ppa:vbernat/haproxy-2.3
+
+- name: Update repositories cache and install "HAProxy" package
+  apt:
+    name: haproxy
+    update_cache: yes
+
+- name: Enable service HAProxy and ensure it is not masked
+  ansible.builtin.systemd:
+    name: haproxy
+    enabled: yes
+    masked: no
+
+- name: Reload service HAProxy, in all cases
+  ansible.builtin.systemd:
+    name: haproxy
+    state: reloaded
+
+- name: Make sure HAProxy service is running
+  ansible.builtin.systemd:
+    state: started
+    name: haproxy
+
+- name: Setting up HAProxy configs
+  template:
+    src: "{{ role_path }}/templates/haproxy.cfg.j2"
+    dest: /etc/haproxy/haproxy.cfg
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Restart HAProxy to apply the changes
+  ansible.builtin.systemd:
+    state: restarted
+    name: haproxy
