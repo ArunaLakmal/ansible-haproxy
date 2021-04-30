@@ -35,12 +35,12 @@ defaults
 
 frontend k8s_lb
     mode tcp
-    bind 147.135.97.199:80
+    bind 192.168.17.56:80
     default_backend kube_minions
 
 frontend k8s_lb_https
     mode tcp
-    bind 147.135.97.199:443
+    bind 192.168.17.56:443
     default_backend kube_minions_https
 
 backend kube_minions
