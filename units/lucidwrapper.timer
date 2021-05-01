@@ -1,0 +1,10 @@
+[Unit]
+Description=ansible wrapper timer for haproxy
+
+[Timer]
+OnUnitActiveSec=300s
+OnBootSec=10s
+#OnActiveSec=20s
+
+[Install]
+WantedBy=timers.target
