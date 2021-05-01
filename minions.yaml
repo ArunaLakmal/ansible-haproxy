@@ -4,3 +4,5 @@ minions:
     ip: 10.10.10.10
   - name: k8s_worker-02
     ip: 10.10.10.11
+  - name: k8s_worker-02
+    ip: 10.10.10.12
