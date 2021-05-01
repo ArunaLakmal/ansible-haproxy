@@ -54,5 +54,6 @@ backend kube_minions
 backend kube_minions_https
     mode tcp
     balance roundrobin
-    server k8s_worker-01 51.81.185.14:32443
-    server k8s_worker-02 51.81.185.18:32443
+{% for minion in minions %}
+    server {{ minion.name }} {{ minion.ip }}:32443
+{% endfor %}
