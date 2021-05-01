@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat logo.txt
+cat scripts/logo.txt
 echo "Deploying HAProxy....!!!"
 echo "Installing the repository"
 
