@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REF="v1.0"
+REF="main"
 ROOT=/
 MODULE_DIR="ansible-haproxy"
 
