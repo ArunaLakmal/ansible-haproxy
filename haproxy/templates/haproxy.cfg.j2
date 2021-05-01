@@ -36,22 +36,24 @@ defaults
 
 frontend k8s_lb
     mode tcp
-    bind 192.168.17.56:80
+    bind {{ hostvars[inventory_hostname]['ansible_default_ipv4']['address'] }}:80
     default_backend kube_minions
 
 frontend k8s_lb_https
     mode tcp
-    bind 192.168.17.56:443
+    bind {{ hostvars[inventory_hostname]['ansible_default_ipv4']['address'] }}:443
     default_backend kube_minions_https
 
 backend kube_minions
     mode tcp
     balance roundrobin
-    server k8s_worker-01 51.81.185.14:32080
-    server k8s_worker-02 51.81.185.18:32080
+{% for minion in minions %}
+    server {{ minion.name }} {{ minion.ip }}:32080
+{% endfor %}
 
 backend kube_minions_https
     mode tcp
     balance roundrobin
-    server k8s_worker-01 51.81.185.14:32443
-    server k8s_worker-02 51.81.185.18:32443
+{% for minion in minions %}
+    server {{ minion.name }} {{ minion.ip }}:32443
+{% endfor %}
