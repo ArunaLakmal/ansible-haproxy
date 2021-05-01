@@ -1,5 +1,6 @@
 #!/bin/bash
 
+REF="v1.0"
 ROOT=/
 MODULE_DIR="ansible-haproxy"
 
@@ -13,7 +14,7 @@ cd "$ROOT"
 if [[ -d "$MODULE_DIR" ]]; then
         rm -rf "$MODULE_DIR"
 else
-        git clone https://github.com/ArunaLakmal/ansible-haproxy.git  --branch "main" --single-branch
+        git clone https://github.com/ArunaLakmal/ansible-haproxy.git  --branch "$REF" --single-branch
         cd "$MODULE_DIR"
         run_ansible
 fi

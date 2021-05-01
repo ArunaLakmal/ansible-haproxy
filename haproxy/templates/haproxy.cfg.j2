@@ -36,7 +36,7 @@ defaults
 
 frontend k8s_lb
     mode tcp
-    bind 192.168.17.56:80
+    bind {{ hostvars[inventory_hostname]['ansible_default_ipv4']['address'] }}:80
     default_backend kube_minions
 
 frontend k8s_lb_https

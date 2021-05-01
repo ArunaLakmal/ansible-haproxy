@@ -1,2 +1,4 @@
 ---
-# vars file for haproxy
+minions:
+  - 10.10.10.10
+  - 10.10.10.11
