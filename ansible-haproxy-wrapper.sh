@@ -7,7 +7,7 @@ MODULE_DIR="ansible-haproxy"
 run_ansible() {
   ansible-galaxy remove haproxy_role
   ansible-galaxy install -r requirements.yml
-  ansible-playbook haproxy_playbook.yaml
+  ansible-playbook haproxy_playbook.yaml --extra-vars "@minions.yaml"
 }
 
 cd "$ROOT"
