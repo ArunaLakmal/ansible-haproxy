@@ -1,6 +1,10 @@
-all: proxy proxy_test
+all: proxy
 
 proxy:
+	@echo "Starting Proxy Deployment"
+	@./scripts/deploy-haproxy.sh
+
+proxy_docker:
 	@echo "Starting Proxy Deployment"
 	@./scripts/system.sh
 	@./scripts/deploy-haproxy.sh
