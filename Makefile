@@ -11,7 +11,7 @@ proxy_docker:
 
 proxy_test:
 	@echo "Perform Compliance Test for HAProxy"
-	@inspec exec tests/haproxy
+	@inspec exec tests/haproxy --chef-license accept-silent
 
 .DEFAULT_GOAL := all
 
