@@ -1,3 +1,3 @@
-# Example InSpec Profile
+# HAProxy InSpec Profile
 
-This example shows the implementation of an InSpec profile.
+This is the inspec profile for the deployed HAProxy service and compliance test.
