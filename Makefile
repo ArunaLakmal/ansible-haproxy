@@ -1,4 +1,5 @@
 all: proxy
+ci: proxy_docker proxy_test
 
 proxy:
 	@echo "Starting Proxy Deployment"
@@ -7,7 +8,6 @@ proxy:
 proxy_docker:
 	@echo "Starting Proxy Deployment"
 	@./scripts/system.sh
-	@./scripts/deploy-haproxy.sh
 
 proxy_test:
 	@echo "Perform Compliance Test for HAProxy"
