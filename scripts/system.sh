@@ -26,10 +26,6 @@ else
         mkdir /run/haproxy/
 fi
 
-# apt-add-repository ppa:ansible/ansible -y
-# apt-get update
-# apt-get install ansible -y
-
 echo "Setting up unit files"
 
 cp units/* /etc/systemd/system/
